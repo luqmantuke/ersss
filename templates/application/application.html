@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+    <!--====== PAGE BANNER PART START ======-->
+
+    <section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url({% static 'images/page-banner-6.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>Contact</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Application</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+<section id="blog-singel" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-8">
+                  <div class="blog-details mt-30">
+                      <div class="thum">
+
+                      </div>
+                      <div class="cont">
+                          <h6>Edmund Rice Sinon Secondary School offers advanced level and ordinary level studies
+                   for both girls and boys without judging their ethics as either Cristians or Muslims.</h6>
+                        <div style="padding-top:0.7%;">
+                          <p>To apply for studies you need to select your preferred level and fill out the form. Remember it take 30 seconds to submit
+                your application(don't quit).</p>
+                        </div>
+                          <div style="padding-top:0.7%;">
+                           <p>After applying we will contact you and tell you the interview day or check out in our <a href="{% url 'events_list' %}">events</a> page. </p>
+</div>
+                          <div style="padding-top:0.7%;">
+                           <h6 style="color:green;">Here is the video to help you out with our online application.</h6>
+                          </div>
+                          <div style="padding-top:0.7%;">
+                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/XGqU4iH1T5E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                          <div style="padding-top:1%;">
+                               <a href="{% url 'olevelapplication' %}" class="btn btn-Success">Apply O-Level</a>
+                          <a href="{% url 'alevelapplication' %}" class="btn btn-success">Apply A-Level</a>
+
+                          </div>
+                      </div> <!-- cont -->
+                  </div> <!-- blog details -->
+              </div>
+
+           </div>
+        </div>
+</section>
+
+<!--<section id="teachers-page" class="pt-90 pb-120 gray-bg">-->
+<!--        <div class="container">-->
+<!--           <div class="row">-->
+<!--               <h2>Edmund Rice Sinon Secondary School offers advanced level and ordinary level studies-->
+<!--                   for both girls and boys without judging their ethics as either Cristians and Muslims-->
+<!--            </h2>-->
+<!--               <div class="row">-->
+<!--              <p>To apply for studies you need to select your preferred level and fill out the form. Remember it take 30 seconds to submit-->
+<!--                your application(don't quit).   </p>-->
+<!--</div>-->
+<!--           -->
+<!--                <p>After applying we will contact you and tell you the interview day or check out in our <a href="{% url 'events_list' %}">events</a> page. </p>-->
+<!--              <h3>Here is the video to help you out with our online application.</h3>-->
+<!--                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/XGqU4iH1T5E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>-->
+<!--<P>-->
+<!--                    <a href="{% url 'alevelapplication' %}" class="btn btn-success">Apply A-Level</a>-->
+<!--                 <a href="{% url 'olevelapplication' %}" class="btn btn-Success">Apply O-Level</a>-->
+<!--               </P>-->
+
+<!--                      </div>-->
+
+
+<!--                        </div>-->
+
+<!-- </section>-->
+{% endblock body %}

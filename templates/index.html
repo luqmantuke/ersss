@@ -1,0 +1,399 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <!--====== SLIDER PART START ======-->
+    
+    <section id="slider-part" class="slider-active">
+        <div class="single-slider bg_cover pt-150" style="background-image: url({% static 'images/slider/s-1.jpg' %})" data-overlay="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h1 data-animation="bounceInLeft" data-delay="1s">Hope Through Education</h1>
+                            <p data-animation="fadeInUp" data-delay="1.3s">Edmund Rice is a school that puts God forward and that's our secret for success.</p>
+                            <ul>
+                                <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{% url 'aboutus' %}">Read More</a></li>
+                                <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="{% url 'applications' %}">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- single slider -->
+        
+        <div class="single-slider bg_cover pt-150" style="background-image: url({% static 'images/slider/s-2.jpg' %})" data-overlay="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h1 data-animation="bounceInLeft" data-delay="1s">We have enough and quality resouces.</h1>
+                            <p data-animation="fadeInUp" data-delay="1.3s">Edmund Rice is enriched with tones of resources such as library full of books, laboratories and many more.</p>
+                              <ul>
+                                <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{% url 'aboutus' %}">Read More</a></li>
+                                <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="{% url 'applications' %}">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- single slider -->
+        
+        <div class="single-slider bg_cover pt-150" style="background-image: url({% static 'images/slider/s-3.jpg' %})" data-overlay="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h1 data-animation="bounceInLeft" data-delay="1s">Quality Infrastucture</h1>
+                            <p data-animation="fadeInUp" data-delay="1.3s">Edmund Rice has good infrastructure including dormitories and classes at an afforadable fee.</p>
+                             <ul>
+                                <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{% url 'aboutus' %}">Read More</a></li>
+                                <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="{% url 'applications' %}">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- single slider -->
+    </section>
+    
+    <!--====== SLIDER PART ENDS ======-->
+   
+
+    <!--====== ABOUT PART START ======-->
+    
+    <section id="about-part" class="pt-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50">
+                        <h5>About us</h5>
+                        <h2>Welcome to Edmund Rice Sinon Secondary School </h2>
+                    </div> <!-- section title -->
+                    <div class="about-cont">
+                        <p>The name EDMUND RICE originates from Blessed Edmund Rice, the Founder of the Christian Brothers who currently administer the school. SINON is the village where the school began in 1988 and where it is located. The UHURU TORCH exemplifies the challenge to our teachers who enlighten the way for the young while the OPEN BOOK points to a familiar source of knowledge.<br><br>The MOUNTAIN emphasizes for the students the challenge of working hard to reach their goals. The MAIZE PLANTS remind us that education is as important as food. Our School Motto, "Hope Through Education", encourages us to study and work in the hope for a better future for the individual, the community and the nation.</p>
+                        <a href="{% url 'aboutus' %}" class="main-btn mt-55">Learn More</a>
+                    </div>
+                </div> <!-- about cont -->
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="about-event mt-50">
+                        <div class="event-title">
+                            <h3>Upcoming events</h3>
+                        </div> <!-- event title -->
+                        <ul>
+                            {% for event in events %}
+                            <li>
+                                <div class="singel-event">
+                                    <span><i class="fa fa-calendar"></i>{{ event.date }}</span>
+                                    <a href="{% url 'event_details' event.slug %}"><h4>{{ event.name }}</h4></a>
+                                    <span><i class="fa fa-clock-o"></i> {{ event.time }}</span>
+                                    <span><i class="fa fa-map-marker"></i> {{ event.location }}</span>
+                                </div>
+                            </li>
+
+                            {% endfor %}
+                        </ul> 
+                    </div> <!-- about event -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="about-bg">
+            <img src="{% static 'images/about/bg-1.jpg' %}" alt="About">
+        </div>
+    </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+   
+    <!--====== APPLY PART START ======-->
+    
+    <section id="apply-aprt" class="pb-120">
+        <div class="container">
+            <div class="apply">
+                <div class="row no-gutters">
+                    <div class="col-lg-6">
+                        <div class="apply-cont apply-color-1">
+                            <h3>Apply for Advanced Level</h3>
+                            <p>Edmund Rice offers advanced level studies for all ethnic groups and all gender with combinations on Science, Business and Arts.</p>
+                            <a href="{% url 'alevelapplication' %}" class="main-btn">Apply Now</a>
+                        </div> <!-- apply cont -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="apply-cont apply-color-2">
+                            <h3>Apply for Ordinary Level</h3>
+                            <p>Edmund Rice offers ordinary level from students from both government schools and private school for both girls and boys.</p>
+                            <a href="{% url 'olevelapplication' %}" class="main-btn">Apply Now</a>
+                        </div> <!-- apply cont -->
+                    </div> 
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== APPLY PART ENDS ======-->
+   
+
+   
+    <!--====== VIDEO FEATURE PART START ======-->
+    
+    <section id="video-feature" class="bg_cover pt-60 pb-110" style="background-image: url({% static 'images/bg-1.jpg' %})">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-last order-lg-first">
+                    <div class="video text-lg-left text-center pt-50">
+                        <a class="Video-popup" href="https://www.youtube.com/watch?v=lXnv1O9rYcU"><i class="fa fa-play"></i></a>
+                    </div> <!-- row -->
+                </div>
+                <div class="col-lg-5 offset-lg-1 order-first order-lg-last">
+                    <div class="feature pt-50">
+                        <div class="feature-title">
+                            <h3>Our Facilities</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="singel-feature">
+                                    <div class="icon">
+                                        <img src="{% static 'images/all-icon/f-1.png' %}" alt="icon">
+                                    </div>
+                                    <div class="cont">
+                                        <h4>Global Certificate</h4>
+                                        <p>Edmund Rice is awarded global certificate for  it's quality services and  children rights respectively.</p>
+                                    </div>
+                                </div> <!-- singel feature -->
+                            </li>
+                            <li>
+                                <div class="singel-feature">
+                                    <div class="icon">
+                                        <img src="{% static 'images/all-icon/f-2.png' %}" alt="icon">
+                                    </div>
+                                    <div class="cont">
+                                        <h4>Sponsorship</h4>
+                                        <p>Edmund Rice offers sponsorship for students who are in need.</p>
+                                    </div>
+                                </div> <!-- singel feature -->
+                            </li>
+                            <li>
+                                <div class="singel-feature">
+                                    <div class="icon">
+                                        <img src="{% static 'images/all-icon/f-3.png' %}" alt="icon">
+                                    </div>
+                                    <div class="cont">
+                                        <h4>Books & Library</h4>
+                                        <p>Edmund Rice is ranked as the second biggest library after the region library with full of books.</p>
+                                    </div>
+                                </div> <!-- singel feature -->
+                            </li>
+                        </ul>
+                    </div> <!-- feature -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="feature-bg"></div> <!-- feature bg -->
+    </section>
+    
+    <!--====== VIDEO FEATURE PART ENDS ======-->
+   
+    <!--====== TEACHERS PART START ======-->
+    
+    <section id="teachers-part" class="pt-70 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50">
+                        <h5>Featured Teachers</h5>
+                        <h2>Meet Our teachers</h2>
+                    </div> <!-- section title -->
+                    <div class="teachers-cont">
+                        <p>Edmund Rice has over 160 staffs of which 100 are teaching staffs and 60 are non-teaching staffs.<br><br> The teaching staffs are qualified and 95% of them are bachelor holders and over 6 years of experience <br><br>
+                           We believe that, having many  teachers  more especially the science teachers is essential for students to perform well in their examinations.</p>
+                        <a href="{% url 'staff_list' %}" class="main-btn mt-55">Our Staff</a>
+                    </div> <!-- teachers cont -->
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="teachers mt-20">
+                        <div class="row">
+                            {% for staff in staffs %}
+                            <div class="col-sm-6">
+                                <div class="singel-teachers mt-30 text-center">
+                                    <div class="image">
+                                        <img src="{{ staff.image.url }}" alt="Teachers">
+                                    </div>
+                                    <div class="cont">
+                                        <a href="{% url 'staff_detail' staff.slug %}"><h6>{{ staff.name }}</h6></a>
+                                        <span>{{ staff.category }}</span>
+                                    </div>
+                                </div> <!-- singel teachers -->
+                            </div>
+                          {% endfor %}
+                        </div> <!-- row -->
+                    </div> <!-- teachers -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== TEACHERS PART ENDS ======-->
+
+   
+    <!--====== TEASTIMONIAL PART START ======-->
+    
+    <section id="testimonial" class="bg_cover pt-115 pb-115" data-overlay="8" style="background-image: url({% static 'images/bg-2.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title pb-40">
+                        <h5>Testimonial</h5>
+                        <h2>What they say</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row testimonial-slied mt-40">
+                <div class="col-lg-6">
+                    <div class="singel-testimonial">
+                        <div class="testimonial-thum">
+                            <img src="{% static 'images/testimonial/t-1.jpg' %}" alt="Testimonial">
+                            <div class="quote">
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-cont">
+                            <p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>
+                            <h6>Rubina Helen</h6>
+                            <span>Bsc, Engineering</span>
+                        </div>
+                    </div> <!-- singel testimonial -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="singel-testimonial">
+                        <div class="testimonial-thum">
+                            <img src="{% static 'images/testimonial/t-2.jpg' %}" alt="Testimonial">
+                            <div class="quote">
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-cont">
+                            <p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>
+                            <h6>Rubina Helen</h6>
+                            <span>Bsc, Engineering</span>
+                        </div>
+                    </div> <!-- singel testimonial -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="singel-testimonial">
+                        <div class="testimonial-thum">
+                            <img src="{% static 'images/testimonial/t-3.jpg' %}" alt="Testimonial">
+                            <div class="quote">
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-cont">
+                            <p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>
+                            <h6>Rubina Helen</h6>
+                            <span>Bsc, Engineering</span>
+                        </div>
+                    </div> <!-- singel testimonial -->
+                </div>
+            </div> <!-- testimonial slied -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== TEASTIMONIAL PART ENDS ======-->
+   
+    <!--====== NEWS PART START ======-->
+    
+    <section id="news-part" class="pt-115 pb-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title pb-50">
+                        <h5>Latest News</h5>
+                        <h2>From the news</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="singel-news mt-30">
+                        <div class="news-thum pb-25">
+                            <img src="{% static 'images/news/n-1.jpg' %}" alt="News">
+                        </div>
+                        <div class="news-cont">
+
+                            <h3>Important News From The School</h3
+                                <br><br>
+                            <p>Edmund Rice has so many activities going on. And it's our duty to share those activities with the world such as important news.</p>
+                        </div>
+                    </div> <!-- singel news -->
+                </div>
+                <div class="col-lg-6">
+                    {% for post in posts %}
+                    <div class="singel-news news-list">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="news-thum mt-30">
+                                    <img src="{{ post.image.url }}" alt="{{ post.name }}">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="news-cont mt-30">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-calendar"></i>{{ post.publish }} </a></li>
+                                        <li><a href="#"> <span>By</span> {{ post.author }}</a></li>
+                                    </ul>
+                                    <a href="{% url 'post_detail' post.slug %}"><h3>{{ post.name }}</h3></a>
+                                    <p{{ post.body | safe | slice:120 }}.</p>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- singel news -->
+                  {% endfor %}
+
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== NEWS PART ENDS ======-->
+   
+    <!--====== PATNAR LOGO PART START ======-->
+    
+    <div id="patnar-logo" class="pt-40 pb-80 gray-bg">
+        <div class="container">
+            <div class="row patnar-slied">
+                <div class="col-lg-12">
+                    <div class="singel-patnar text-center mt-40">
+                        <img src="{% static 'images/patnar-logo/Christian-Brothers-Logo.jpg' %}" alt="Logo">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="singel-patnar text-center mt-40">
+                        <img src="{% static 'images/patnar-logo/labdoo.png' %}" alt="Logo">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="singel-patnar text-center mt-40">
+                        <img src="{% static 'images/patnar-logo/Probono.jpg' %}" alt="Logo">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="singel-patnar text-center mt-40">
+                        <img src="{% static 'images/patnar-logo/Christian-Brothers-Logo.jpg' %}" alt="Logo">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="singel-patnar text-center mt-40">
+                        <img src="{% static 'images/patnar-logo/labdoo.png' %}" alt="Logo">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="singel-patnar text-center mt-40">
+                        <img src="{% static 'images/patnar-logo/Probono.jpg' %}" alt="Logo">
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> 
+    
+    <!--====== PATNAR LOGO PART ENDS ======-->
+
+    {% endblock body %}

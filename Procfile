@@ -1,0 +1,1 @@
+web: gunicorn TukeSchool.wsgi --log-file -

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block body %}
+
+
+ <section id="contact-page" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+<h3>Advanced Level Online Applications.</h3>
+
+                    <form method="post">
+    {% csrf_token %}
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}" style="color:blue;">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+<div style="padding-top:1%; padding-bottom:1%; color:red;">
+        {% for error in field.errors %}
+          <span class="danger">{{ error }}</span>
+        {% endfor %}
+    </div>
+      </div>
+    {% endfor %}
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> Apply
+      </button>
+      <a href="{% url 'home' %}" class="btn btn-default">Cancel</a>
+    </div>
+  </form>
+
+
+
+
+                </div>
+            </div>
+        </div>
+ </section>
+
+
+
+{% endblock body %}
