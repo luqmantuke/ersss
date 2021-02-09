@@ -29,5 +29,5 @@ urlpatterns = [
 
 ]
 
-handler404 = 'portfolio.views.handler404'
-handler500 = 'portfolio.views.handler500'
+handler404 = 'tkschool.views.handler404'
+handler500 = 'tkschool.views.handler500'
