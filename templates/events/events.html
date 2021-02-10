@@ -43,7 +43,6 @@
                            <a href="{% url 'event_details' event.slug %}"> <h4>{{ event.name }}</h4></a>
                             <span><i class="fa fa-clock-o"></i> {{ event.time }}</span>
                             <span><i class="fa fa-map-marker"></i> {{ event.location }}</span>
-                           {% autoescape off %}<p>{{ event.body | slice:60 }}</p>{% endautoescape off %}
                        </div>
                    </div>
                </div>
